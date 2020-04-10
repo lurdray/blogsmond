@@ -1,0 +1,2 @@
+# blogsmond
+blogsmond blog app
