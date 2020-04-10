@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}All Jobs{% endblock title %}
+
+{% block content %}
+
+	<section>
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-12 col-lg-8">
+					
+					<h4 class="p-title"><b>All Job Adverts</b></h4>
+					<div class="row">
+					
+						{% for job in jobs %}
+						<a class="pos-relative h-100s dplay-block" href="{% url 'job_detail' job.slug %}">
+						<div class="col-sm-6">
+							<img class="img-fluid" src="{{ job.image.url }}" alt="image for {{ job.title }}">
+							<h4 class="pt-20"><a href="#"><b>{{ job.title }}</b></a></h4>
+							<ul class="list-li-mr-20 pt-10 mb-30">
+								<li class="color-lite-black">at <a href="#" class="color-black"><b>{{ job.company }},</b></a>
+								{{ job.location }}</li>
+								<li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>Deadline: {{ job.deadline }}</li>
+							</ul>
+						</div><!-- col-sm-6 -->
+						</a>
+						{% endfor %}
+						
+						
+					</div><!-- row -->
+
+				</div><!-- col-md-9 -->
+				
+				<div class="d-none d-md-block d-lg-none col-md-3"></div>
+				<div class="col-md-6 col-lg-4">
+					<div class="pl-20 pl-md-0">
+						<h4 class="p-title"><b>Stats</b></h4>
+						<ul class="list-block list-li-ptb-15 list-btm-border-white bg-primary text-center">
+							<li><b>Post: 13,2323</b></li>
+							<li><b>Comments: 3,2323</b></li>
+							<li><b>Votes: 2323</b></li>
+							<li><b>Jobs: 323</b></li>
+						</ul>
+						
+						<div class="mtb-50">
+							<h4 class="p-title"><b>Scholarship and Internship Programs</b></h4>
+							{% for scholarship in scholarships %}
+							<a class="oflow-hidden pos-relative mb-20 dplay-block" href="{% url 'scholarship_detail' scholarship.slug %}">
+								<div class="wh-100x abs-tlr"><img src="{{ scholarship.image.url }}" alt="image for {{ scholarship.image.url }}"></div>
+								<div class="ml-120 min-h-100x">
+									<h5><b>{{ scholarship.institution }}</h5>
+									<h6 class="color-lite-black pt-10">in <span class="color-black"><b>{{ scholarship.course }}, {{ scholarship.country }}</b></span><br />deadline: {{ scholarship.deadline }}</h6>
+								</div>
+							</a><!-- oflow-hidden -->
+							{% endfor %}
+						</div><!-- mtb-50 -->
+						
+												
+												
+					</div><!--  pl-20 -->
+				</div><!-- col-md-3 -->
+				
+			</div><!-- row -->
+		</div><!-- container -->
+	</section>
+
+
+
+
+{% endblock content %}

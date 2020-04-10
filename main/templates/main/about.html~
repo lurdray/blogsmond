@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}{{ blog.title }}{% endblock title %}
+
+{% block content %}
+	 
+	 	<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="{% static 'main/images/ray.jpg' %}" alt="image of blogsmond's CEO">
+						<h3 class="mt-30"><b>Odiaga Raymond .I.</b></h3>
+					</div>
+					<div class="col-md-6">
+						<br />
+						<br />
+						<h4 class="p-title"><b>About Raymond</b></h4>
+						<p>Hey there!, Ok I'm a graduate of Physics Electronics from the Federal University of Technology, Minna - Niger State.<br />
+						Baged my Bachelor of Technology in Physics in the year 2018, Ive been a developer for a while now.
+						</p>
+						<br />
+						
+						<h4 class="p-title"><b>About Blogsmond</b></h4>
+						<p>Well..., Blogsmond started off as a trend-analysis blog site. However not anymore, i find it really uneasy to handle. Moreover, the news-blogsphere is highly saturated: So blogsmond is now a self development, Bussiness Guide, Enterpreneur Hack, Job Adverts and Scholarship Advert Blog App! <br />
+						Sounds too much for just one Blog App ?. I know right! Actually, No it isn't, trust me the listed case studies circle around themselves and i am going to prove that to you!<br />
+						Yeah, this Blog App would also offer some cool Web Apps(simply select Blogsmond Apps from the menu to discover), forgive my love for Web app development<br />
+						Some of these apps might be fun, others may offer you credible functions to acheive a solution as you go through these series.</p>
+						<br />
+						
+						
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+{% endblock %}

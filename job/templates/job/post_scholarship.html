@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blogmond Post Scholarship{% endblock title %}
+
+{% block content %}
+	 
+	<div class="container">
+			<br />
+				<br />
+					<br />
+					<h3>Blogmond Post Scholarship</h3>
+		<div class="jumbotron">
+			
+			<div class="row">
+				<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+                 	<div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="institution" placeholder="Instittution">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="course" placeholder="Course">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="requirement" placeholder="Requirement">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="link" placeholder="Scholarship Link">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="country" placeholder="Country">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="benefit" placeholder="Benefit">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="description" placeholder="Description">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="how_to_a" placeholder="How to Apply">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="deadline" placeholder="Deadline">
+                    </div>
+                    	<br />
+                    <div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="poster" placeholder="poster">
+                    </div>
+                    	<br />
+                    <div class="form-double">
+                    	<input type="file" name="image" required="required" accept="image/*">
+                   	</div>
+                   		<br />
+                   	
+                   <div class="form-double">
+                    	 <button class="bttn bttn-primary">Submit!</button>
+                   	</div>
+                   	
+                
+                </form>
+			</div>
+		</div>
+	
+	</div>
+
+
+
+{% endblock %}

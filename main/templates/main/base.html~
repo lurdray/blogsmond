@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,600,700" rel="stylesheet">
+	
+	<!-- Stylesheets -->
+	
+	<link href="{% static 'main/fonts/ionicons.css' %}" rel="stylesheet">
+	
+		
+	
+	<link href="{% static 'main/plugin-frameworks/bootstrap.css' %}" rel="stylesheet"> 
+	<link href="{% static 'main/common/styles.css' %}" rel="stylesheet">
+	
+	
+</head>
+<body>
+	
+ 	<header>
+		<div class="bg-191">
+			<div class="container">	
+				<div class="oflow-hidden color-ash font-9 text-sm-center ptb-sm-5">
+					<ul class="float-right float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
+						<li><a class="pl-0 pl-sm-10" href="#"><i class="ion-social-facebook"></i></a></li>
+						<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+						<li><a href="#"><i class="ion-social-google"></i></a></li>
+						<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+						<li><a href="#"><i class="ion-social-bitcoin"></i></a></li>
+					</ul>
+					
+				</div><!-- top-menu -->
+			</div><!-- container -->
+		</div><!-- bg-191 -->
+		
+		<div class="container">
+			<a class="btn" href="{% url 'index' %}" style="background-color: black; color: white; float: left; margin: 15px 0;"><b>Blogsmond</b></a>
+			
+			<a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+			
+			<ul class="main-menu" id="main-menu">
+				<li><a href="{% url 'all_blogs' %}">BLOGs</a></li>
+				<li class="drop-down"><a href="#">BLOGSMOND APPS<i class="ion-arrow-down-b"></i></a>
+					<ul class="drop-down-menu drop-down-inner">
+						<li><a href="#">Anonymous App</a></li>
+						<li><a href="#">Corona Virus Checker</a></li>
+					</ul>
+				</li>
+				<li><a href="{% url 'all_jobs' %}">JOB ADVERTS</a></li>
+				<li><a href="{% url 'all_scholarships' %}">SCHOLARSHIP AND INTERNSHIP ADVERTS</a></li>
+				<li><a href="{% url 'about' %}">ABOUT</a></li>
+			</ul>
+			<div class="clearfix"></div>
+		</div><!-- container -->
+	</header>
+	
+		{% block content %}
+			<br /><br /><br />
+
+        {% endblock content %}
+	
+	
+	<footer class="bg-191 color-ccc">
+		
+		<div class="container">
+			<div class="pt-50 pb-20 pos-relative">
+				<div class="abs-tblr pt-50 z--1 text-center">
+					<div class="h-80 pos-relative"><img class="opacty-1 h-100 w-auto" src="images/map.png" alt=""></div>
+				</div>
+			
+			<div class="brdr-ash-1 opacty-2"></div>
+			
+			<div class="oflow-hidden color-ash font-9 text-sm-center ptb-sm-5">
+				<p class="color-ash"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+			
+				<ul class="float-left float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-10">
+					<li><a class="pl-0 pl-sm-10" href="#">Terms & Conditions</a></li>
+					<li><a href="#">Privacy policy</a></li>
+					<li><a href="#">Jobs advertising</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+				<ul class="float-right float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
+					<li><a class="pl-0 pl-sm-10" href="#"><i class="ion-social-facebook"></i></a></li>
+					<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+					<li><a href="#"><i class="ion-social-google"></i></a></li>
+					<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+					<li><a href="#"><i class="ion-social-bitcoin"></i></a></li>
+				</ul>
+				
+			</div><!-- oflow-hidden -->
+		</div><!-- container -->
+	</footer>
+	
+	<!-- SCIPTS -->
+	
+	<script src="{% static 'main/plugin-frameworks/jquery-3.2.1.min.js' %}"></script>
+	
+	<script src="{% static 'main/plugin-frameworks/tether.min.js' %}"></script>
+	
+	<script src="{% static 'main/plugin-frameworks/bootstrap.js' %}"></script>
+	
+	<script src="{% static 'main/common/scripts.js' %}"></script>
+	
+</body>
+</html>
