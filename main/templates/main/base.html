@@ -3,66 +3,109 @@
 {% load static %}
 
 <head>
-	<title>
+		<title>
 		{% block title %}
 		{% endblock %}
 	</title>
+  	<meta name="description" content="{% block description %} {% endblock %}">
+	<meta name="keywords" content="{% block keywords %} {% endblock %}">
+	<meta name="author" content="odiaga raymond">
+	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
+	<meta name="google-site-verification" content="WrdeH97n9EQhKp0m0HBDB-xxXDaoNlW77kGemS1ZojM" />
 	
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,600,700" rel="stylesheet">
-	
-	<!-- Stylesheets -->
-	
-	<link href="{% static 'main/fonts/ionicons.css' %}" rel="stylesheet">
+		<link href="{% static 'main/fonts/ionicons.css' %}" rel="stylesheet">
 	
 		
 	
 	<link href="{% static 'main/plugin-frameworks/bootstrap.css' %}" rel="stylesheet"> 
 	<link href="{% static 'main/common/styles.css' %}" rel="stylesheet">
+	<style>
+
+
+.navbar-brand img {
+    display:inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-brands img {
+    display:inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-brand span {
+    display:inline-block;
+}
+.navbar-brand {
+    padding: 10px 15px        
+    float: left; // or delete float left or add following css:
+    width: 60px // set some width to your parent div that will fit img and span widths
+
+}
+
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+</style>
 	
-	
+
 </head>
 <body>
 	
- 	<header>
+<header>
 		<div class="bg-191">
-			<div class="container">	
-				<div class="oflow-hidden color-ash font-9 text-sm-center ptb-sm-5">
-					<ul class="float-right float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
-						<li><a class="pl-0 pl-sm-10" href="#"><i class="ion-social-facebook"></i></a></li>
-						<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-						<li><a href="#"><i class="ion-social-google"></i></a></li>
-						<li><a href="#"><i class="ion-social-instagram"></i></a></li>
-						<li><a href="#"><i class="ion-social-bitcoin"></i></a></li>
-					</ul>
-					
-				</div><!-- top-menu -->
-			</div><!-- container -->
-		</div><!-- bg-191 -->
-		
-		<div class="container">
-			<a class="btn" href="{% url 'index' %}" style="background-color: black; color: white; float: left; margin: 15px 0;"><b>Blogsmond</b></a>
-			
-			<a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
-			
-			<ul class="main-menu" id="main-menu">
-				<li><a href="{% url 'all_blogs' %}">BLOGs</a></li>
-				<li class="drop-down"><a href="#">BLOGSMOND APPS<i class="ion-arrow-down-b"></i></a>
-					<ul class="drop-down-menu drop-down-inner">
-						<li><a href="#">Anonymous App</a></li>
-						<li><a href="#">Corona Virus Checker</a></li>
-					</ul>
-				</li>
-				<li><a href="{% url 'all_jobs' %}">JOB ADVERTS</a></li>
-				<li><a href="{% url 'all_scholarships' %}">SCHOLARSHIP AND INTERNSHIP ADVERTS</a></li>
-				<li><a href="{% url 'about' %}">ABOUT</a></li>
-			</ul>
-			<div class="clearfix"></div>
-		</div><!-- container -->
-	</header>
+		    <div class="container">
+		        
+		        <nav class="navbar navbar-static-top navbar-default" role="navigation">
+                  <div class="container">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index' %}" style="color: white;">
+                        <span><img alt="Blogsmond Logo" class="navbar-brand-icon" src="{% static 'main/images/mainblog.png' %}"> Blogsmond</span>
+                    </a>
+                    <a href="{% url 'about' %}">
+                        <small style="color: orange;">The Blog of Raymond Odiaga</small>
+                    </a>
+                
+                  </div>
+                
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="">asasas</a></li>
+                     <li><a href="">asdsd</a></li>
+                      <li><a href="">asasas</a></li>
+                      <li><a href="">askigfo</a></li>
+                      <li><a href="">aoooas</a></li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </nav>
+
+    
+    </div>
+    </div>
+</header>
+<br />
+
 	
 		{% block content %}
 			<br /><br /><br />
@@ -74,37 +117,42 @@
 		
 		<div class="container">
 			<div class="pt-50 pb-20 pos-relative">
-				<div class="abs-tblr pt-50 z--1 text-center">
-					<div class="h-80 pos-relative"><img class="opacty-1 h-100 w-auto" src="images/map.png" alt=""></div>
-				</div>
-			
 			<div class="brdr-ash-1 opacty-2"></div>
 			
 			<div class="oflow-hidden color-ash font-9 text-sm-center ptb-sm-5">
 				<p class="color-ash"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Blogsmond! | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </p>
 			
-				<ul class="float-left float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-10">
-					<li><a class="pl-0 pl-sm-10" href="#">Terms & Conditions</a></li>
-					<li><a href="#">Privacy policy</a></li>
-					<li><a href="#">Jobs advertising</a></li>
-					<li><a href="#">Contact us</a></li>
+				<ul class="navbar-brands" class="float-left float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-10">
+					<li><a class="pl-0 pl-sm-10" href="{% url 'index' %}">Blogsmond</a></li>
+					<li><a class="pl-0 pl-sm-10" href="{% url 'index' %}"></a><img alt="Nippon Beauty" width="50px" height="50px" class="navbar-brand-icon" src="{% static 'main/images/mainblog.png' %}"></li>
+					<li><a href="{% url 'index' %}">Privacy policy</a></li>
+					<li><a href="{% url 'index' %}">Contact us</a></li>
 				</ul>
 				<ul class="float-right float-sm-none list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
 					<li><a class="pl-0 pl-sm-10" href="#"><i class="ion-social-facebook"></i></a></li>
 					<li><a href="#"><i class="ion-social-twitter"></i></a></li>
-					<li><a href="#"><i class="ion-social-google"></i></a></li>
 					<li><a href="#"><i class="ion-social-instagram"></i></a></li>
-					<li><a href="#"><i class="ion-social-bitcoin"></i></a></li>
 				</ul>
 				
 			</div><!-- oflow-hidden -->
 		</div><!-- container -->
 	</footer>
 	
-	<!-- SCIPTS -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162292584-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162292584-1');
+</script>
+
 	
 	<script src="{% static 'main/plugin-frameworks/jquery-3.2.1.min.js' %}"></script>
 	
@@ -113,10 +161,31 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="{% static 'main/plugin-frameworks/bootstrap.js' %}"></script>
 	
 	<script src="{% static 'main/common/scripts.js' %}"></script>
-	<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-        <script>  
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.6.2/ckeditor.js"></script>
+
+<script>  
 			CKEDITOR.replace('editor');
-		</script>
+	</script>
+<script>
+		function readURL(input) {
+		  if (input.files && input.files[0]) {
+			var reader = new FileReader();
+		
+			reader.onload = function(e) {
+			  $('#blah').attr('src', e.target.result);
+			}
+		
+			reader.readAsDataURL(input.files[0]); // convert to base64 string
+		  }
+		}
+
+		$("#imgInp").change(function() {
+		  readURL(this);
+	});
+	</script>
 	
 </body>
 </html>
+
+

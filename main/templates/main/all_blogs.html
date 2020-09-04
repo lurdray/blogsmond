@@ -1,9 +1,10 @@
 {% extends 'main/base.html' %}
 {% load staticfiles %}
-
-{% block blogactive %}active{% endblock blogactive %}
-
 {% block title %}All Blogs{% endblock title %}
+{% block description %}Blogsmond is a self development, Bussiness Guide, Enterpreneur Hack, Job Adverts and Scholarship Advert Blog App {% endblock description %}
+{% block keywords %}Blogsmond, Self development, Bussiness Guide, Enterpreneur Hack, Job Adverts, Scholarship Advert, Blog, App{% endblock keywords %}
+{% block author %}Odiaga Raymond{% endblock author %}
+
 
 {% block content %}
 
@@ -24,7 +25,7 @@
 							<ul class="list-li-mr-20 pt-10 mb-30">
 								<li class="color-lite-black">by <a href="#" class="color-black"><b>{{ blog.blogger }},</b></a>
 								{{ blog.pub_date }}</li><br />
-								<li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>{{ blog.votes.count }}</li>
+								<li><i class="color-primary mr-5 font-12 ion-ios-bolt"></i>{{ blog.views }}</li>
 								<li><i class="color-primary mr-5 font-12 ion-chatbubbles"></i>{{ blog.comments.count }}</li>
 							</ul>
 						</div><!-- col-sm-6 -->
@@ -41,37 +42,18 @@
 					<div class="pl-20 pl-md-0">
 						<h4 class="p-title"><b>Stats</b></h4>
 						<ul class="list-block list-li-ptb-15 list-btm-border-white bg-primary text-center">
-							<li><b>Post: 13,2323</b></li>
-							<li><b>Comments: 3,2323</b></li>
-							<li><b>Votes: 2323</b></li>
-							<li><b>Jobs: 323</b></li>
+							<li><b>Posts: {{ blog_count.count }}</b></li>
+							<li><b>Comments: {{ comment_count.count }}</b></li>
+							<li><b>Views: {{ views }}</b></li>
 						</ul>
 						
 						<div class="mtb-50">
-							<h4 class="p-title"><b>JOB ADVERTS</b></h4>
-							{% for job in jobs %}
-							<a class="oflow-hidden pos-relative mb-20 dplay-block" href="{% url 'job_detail' job.slug %}">
-								<div class="wh-100x abs-tlr"><img src="{{ job.image.url }}" alt="image for {{ job.title }}"></div>
-								<div class="ml-120 min-h-100x">
-									<h5><b>{{ job.title }}</b></h5>
-									<h6 class="color-lite-black pt-10">at <span class="color-black"><b>{{ job.company }}, {{ job.location }}.</b></span><br /> {{ job.pub_date }}</h6>
-								</div>
-							</a><!-- oflow-hidden -->
-							{% endfor %}
+							<p></p>
 						</div><!-- mtb-50 -->
 						<br />
 						
 						<div class="mtb-50">
-							<h4 class="p-title"><b>Scholarship and Internship Programs</b></h4>
-							{% for scholarship in scholarships %}
-							<a class="oflow-hidden pos-relative mb-20 dplay-block" href="{% url 'scholarship_detail' scholarship.slug %}">
-								<div class="wh-100x abs-tlr"><img src="{{ scholarship.image.url }}" alt="image for {{ scholarship.image.url }}"></div>
-								<div class="ml-120 min-h-100x">
-									<h5><b>{{ scholarship.institution }}</h5>
-									<h6 class="color-lite-black pt-10">in <span class="color-black"><b>{{ scholarship.course }}, {{ scholarship.country }}</b></span><br />deadline: {{ scholarship.deadline }}</h6>
-								</div>
-							</a><!-- oflow-hidden -->
-							{% endfor %}
+							<p></p>
 						</div><!-- mtb-50 -->
 						
 												

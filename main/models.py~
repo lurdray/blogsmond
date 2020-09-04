@@ -9,15 +9,6 @@ class Comment(models.Model):
 	
 	def __str__(self):
 		return self.name
-		
-class Vote(models.Model):
-	name = models.CharField(max_length=50)
-	comment = models.CharField(max_length=200)
-	pub_date = models.DateTimeField(default=timezone.now)
-	
-	def __str__(self):
-		return self.name
-		
 
 
 class Blog(models.Model):
@@ -25,9 +16,10 @@ class Blog(models.Model):
     blogger = models.CharField(max_length=25, default="blogsmond")
     pub_date = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to='blogs/images/')
-    body = models.TextField()
+    body = models.TextField(default="fuck")
     comments = models.ManyToManyField(Comment, through="BlogCommentConnector")
-    votes = models.ManyToManyField(Vote, through="BlogVoteConnector")
+    keywords = models.CharField(max_length=250, default="one, two, three, bla")
+    views = models.IntegerField(default=0)
     slug = models.SlugField(unique=True)
     
     def save(self, *args, **kwargs):
@@ -46,10 +38,5 @@ class Blog(models.Model):
 class BlogCommentConnector(models.Model):
 	blog = models.ForeignKey(Blog, on_delete=models.CASCADE, default="")
 	comment = models.ForeignKey(Comment, on_delete=models.CASCADE, default="")
-	pub_date = models.DateTimeField(default=timezone.now)
-
-class BlogVoteConnector(models.Model):
-	blog = models.ForeignKey(Blog, on_delete=models.CASCADE, default="")
-	vote = models.ForeignKey(Vote, on_delete=models.CASCADE, default="")
 	pub_date = models.DateTimeField(default=timezone.now)
 
